@@ -22,14 +22,14 @@ else
 endif
 
 define SPARCS_PLP_RUST_INSTALL_TARGET_CMDS
-    mkdir $(TARGET_DIR)/usr/bin/sparcs; \
+    [ -d $(TARGET_DIR)/usr/bin/sparcs ] || mkdir $(TARGET_DIR)/usr/bin/sparcs; \
+    [ -d $(TARGET_DIR)/etc/sparcs ] || mkdir $(TARGET_DIR)/etc/sparcs; \
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/boot_counter $(TARGET_DIR)/usr/bin/sparcs/boot_counter; \
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/command-manager $(TARGET_DIR)/usr/bin/sparcs/command-manager; \
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/sparcam_bulk_config $(TARGET_DIR)/usr/bin/sparcs/sparcam_bulk_config; \
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/sparcam_debug $(TARGET_DIR)/usr/bin/sparcs/sparcam_debug; \
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/sparcs-payload-control $(TARGET_DIR)/usr/bin/sparcs/sparcs-payload-control; \
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/sparcs-sci-obs $(TARGET_DIR)/usr/bin/sparcs/sparcs-sci-obs; \
-    mkdir $(TARGET_DIR)/etc/sparcs; \
     $(INSTALL) -D -m 0755 $(@D)/data/sparcs_payload_configuration.toml $(TARGET_DIR)/etc/sparcs/
 endef
 
