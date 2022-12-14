@@ -48,6 +48,9 @@
 # now run any rc scripts
 ::sysinit:/etc/init.d/rcS
 
+# incremente the boot counter
+::sysinit:/usr/bin/sparcs/boot_counter
+
 # Run Monit in standard run-levels
 ::respawn:/usr/bin/monit -Ic /etc/monitrc
 
