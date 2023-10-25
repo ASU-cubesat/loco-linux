@@ -36,6 +36,7 @@ define SPARCS_PLP_RUST_INSTALL_TARGET_CMDS
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/payload-control $(TARGET_DIR)/usr/bin/sparcs/payload-control; \
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/sci-obs $(TARGET_DIR)/usr/bin/sparcs/sci-obs; \
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/cfdp $(TARGET_DIR)/usr/bin/sparcs/cfdp; \
+    $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/space-saver $(TARGET_DIR)/usr/bin/sparcs/space-saver; \
     $(INSTALL) -D -m 0755 $(@D)/data/sparcs_payload_configuration.toml $(TARGET_DIR)/etc/sparcs/;\
     $(INSTALL) -D -m 0755 $(@D)/data/thermistor_config.toml $(TARGET_DIR)/etc/sparcs/;\
     $(INSTALL) -D -m 0755 $(@D)/data/master_bias_g1_17.raw $(TARGET_DIR)/etc/sparcs/reference_frames/biases/master_bias.raw;\
