@@ -5,8 +5,10 @@ iface lo inet loopback
 # Update the 'address' value to set a custom static IP
 auto eth0
 iface eth0 inet static
-	address 10.0.2.20
-	netmask 255.255.255.0
+    address 200.1.1.105
+    netmask 255.255.0.0
+    hwaddress ether 3c:18:a0:07:eb:31
+    post-up /etc/network/if-up.d/arp_sparcam.sh
 
 # Default SLIP configuration
 #auto sl0
