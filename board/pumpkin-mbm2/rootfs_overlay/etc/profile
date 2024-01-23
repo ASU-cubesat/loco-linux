@@ -1,4 +1,4 @@
-export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/home/system/usr/bin
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/home/system/usr/bin:/usr/bin/sparcs
 export PAGER='/bin/more '
 export EDITOR='/bin/vi'
 
