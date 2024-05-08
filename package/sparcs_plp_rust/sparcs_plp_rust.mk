@@ -39,8 +39,8 @@ define SPARCS_PLP_RUST_INSTALL_TARGET_CMDS
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/space-saver $(TARGET_DIR)/usr/bin/sparcs/space-saver; \
     $(INSTALL) -D -m 0755 $(@D)/data/sparcs_payload_configuration.toml $(TARGET_DIR)/etc/sparcs/;\
     $(INSTALL) -D -m 0755 $(@D)/data/thermistor_config.toml $(TARGET_DIR)/etc/sparcs/;\
-    $(INSTALL) -D -m 0755 $(@D)/data/master_bias_g1_17.raw $(TARGET_DIR)/etc/sparcs/reference_frames/biases/master_bias.raw;\
-    $(INSTALL) -D -m 0755 $(@D)/data/master_dark_T35_g1_17.raw $(TARGET_DIR)/etc/sparcs/reference_frames/darks/master_dark.raw;
+    $(INSTALL) -D -m 0755 $(@D)/data/master_bias_g1_17.raw.bz2 $(TARGET_DIR)/etc/sparcs/reference_frames/biases/master_bias.raw.bz2;\
+    $(INSTALL) -D -m 0755 $(@D)/data/master_dark_T35_g1_17.raw.bz2 $(TARGET_DIR)/etc/sparcs/reference_frames/darks/master_dark.raw.bz2;
 endef
 
 $(eval $(cargo-package))
