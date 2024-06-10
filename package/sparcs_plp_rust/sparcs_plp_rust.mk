@@ -33,6 +33,7 @@ define SPARCS_PLP_RUST_INSTALL_TARGET_CMDS
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/sparcam_bulk_config $(TARGET_DIR)/usr/bin/sparcs/sparcam_bulk_config; \
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/sparcam_debug $(TARGET_DIR)/usr/bin/sparcs/sparcam_debug; \
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/sparcam-comm-stats $(TARGET_DIR)/usr/bin/sparcs/sparcam-comm-stats; \
+    $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/udp-cli $(TARGET_DIR)/usr/bin/sparcs/udp-cli; \
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/payload-control $(TARGET_DIR)/usr/bin/sparcs/payload-control; \
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/sci-obs $(TARGET_DIR)/usr/bin/sparcs/sci-obs; \
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/cfdp $(TARGET_DIR)/usr/bin/sparcs/cfdp; \
