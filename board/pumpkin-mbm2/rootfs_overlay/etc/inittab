@@ -22,16 +22,18 @@
 ::sysinit:/bin/mkdir -p /dev/shm
 
 # Check & clean partitions on mmc1 (internal flash)
-# 2=rootfs, 3=envar, 4=upgrade, 5=home
+# 2=rootfs, 3=envar, 5=upgrade, 6=home
 ::sysinit:/sbin/fsck -p /dev/mmcblk1p2
 ::sysinit:/sbin/fsck -p /dev/mmcblk1p3
-::sysinit:/sbin/fsck -p /dev/mmcblk1p4
+::sysinit:/sbin/fsck -p /dev/mmcblk1p5
+::sysinit:/sbin/fsck -p /dev/mmcblk1p6
 
 # Check & clean partitions on mmc0 (micro-SD card)
-# 2=rootfs, 3=envar, 4=upgrade, 5=home
+# 2=rootfs, 3=envar, 5=upgrade, 6=home
 ::sysinit:/sbin/fsck -p /dev/mmcblk0p2
 ::sysinit:/sbin/fsck -p /dev/mmcblk0p3
-::sysinit:/sbin/fsck -p /dev/mmcblk0p4
+::sysinit:/sbin/fsck -p /dev/mmcblk0p5
+::sysinit:/sbin/fsck -p /dev/mmcblk0p6
 
 # Mount up partitions with data
 ::sysinit:/bin/mount -o remount,rw /
