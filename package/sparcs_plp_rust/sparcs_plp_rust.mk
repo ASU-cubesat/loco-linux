@@ -24,6 +24,7 @@ endif
 define SPARCS_PLP_RUST_INSTALL_TARGET_CMDS
     [ -d $(TARGET_DIR)/usr/bin/sparcs ] || mkdir $(TARGET_DIR)/usr/bin/sparcs; \
     [ -d $(TARGET_DIR)/etc/sparcs ] || mkdir $(TARGET_DIR)/etc/sparcs; \
+    [ -d $(TARGET_DIR)/etc/sparcs/gains ] || mkdir $(TARGET_DIR)/etc/sparcs/gains; \
     [ -d $(TARGET_DIR)/etc/sparcs/reference_frames ] || mkdir $(TARGET_DIR)/etc/sparcs/reference_frames; \
     [ -d $(TARGET_DIR)/etc/sparcs/reference_frames/biases ] || mkdir $(TARGET_DIR)/etc/sparcs/reference_frames/biases; \
     [ -d $(TARGET_DIR)/etc/sparcs/reference_frames/darks ] || mkdir $(TARGET_DIR)/etc/sparcs/reference_frames/darks; \
@@ -39,7 +40,7 @@ define SPARCS_PLP_RUST_INSTALL_TARGET_CMDS
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/cfdp $(TARGET_DIR)/usr/bin/sparcs/cfdp; \
     $(INSTALL) -D -m 0755 $(@D)/target/$(RUSTC_TARGET_NAME)/release/space-saver $(TARGET_DIR)/usr/bin/sparcs/space-saver; \
     $(INSTALL) -D -m 0755 $(@D)/data/sparcs_payload_configuration.toml $(TARGET_DIR)/etc/sparcs/;\
-    $(INSTALL) -D -m 0755 $(@D)/data/conversion_gains.toml.toml $(TARGET_DIR)/etc/gains/;\
+    $(INSTALL) -D -m 0755 $(@D)/data/conversion_gains.toml $(TARGET_DIR)/etc/sparcs/gains/;\
     $(INSTALL) -D -m 0755 $(@D)/data/thermistor_config.toml $(TARGET_DIR)/etc/sparcs/;\
     $(INSTALL) -D -m 0755 $(@D)/data/master_bias_g1.17.raw.bz2 $(TARGET_DIR)/etc/sparcs/reference_frames/biases/master_bias.raw.bz2;\
     $(INSTALL) -D -m 0755 $(@D)/data/master_dark_T35_g1.17.raw.bz2 $(TARGET_DIR)/etc/sparcs/reference_frames/darks/master_dark.raw.bz2;
